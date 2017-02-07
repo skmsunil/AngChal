@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+    <h1>{{title}} 1</h1>
+<div>
+    <label>First name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name">
+</div>
+Hi <b>{{hero.name}}</b>. Welcome to our App. Hope you Like it<br />
+    Cya Later <b>{{hero.name}}</b>
+<hr />
+
+    <h2>{{title}} 2</h2>
+<ul *ngFor="let number of list">
+       <p>{{number}}</p>
+    </ul>
+<hr />
+
+    <h2>Challenge 3 </h2>
+<input [(ngModel)]="numbers" placeholder="number" >
+
+<ul *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">
+    <p>{{numbers}} * {{num}} = {{numbers * num}}</p>
+</ul>
+<hr />
+
+    <h2>Challenge 4</h2>
+Enter The First Number : &nbsp; &nbsp; <input [(ngModel)]="num1" placeholder="number 1"><br /><br />
+Enter The Second Number : <input [(ngModel)]="num2" placeholder="number 2"><br /><br />
+
+RESULT : {{Result}}
+<br /><br />
+
+<button (click)="Add()">ADD</button>
+<button (click)="Result=num1-num2">SUB</button>
+<button (click)="Result=num1*num2">MUL</button>
+<button (click)="Result=num1/num2">DIV</button>
+
+<hr />
+
+    <h2>Challenge 5</h2>
+<input class="new-todo"
+       placeholder="What needs to be done?"
+       [(ngModel)]="newTodo"
+       (keyup.enter)="addTodo(newTodo)"
+       autofocus>
+<input type="submit" value="Add New" (click)="addTodo(newTodo)">
+
+<ul *ngFor="let todo of todoService">
+    <li>{{todo}}</li>
+</ul>
